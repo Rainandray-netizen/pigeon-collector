@@ -4,7 +4,9 @@
 <h1>Pigeon List</h1>
 
 {% for pigeon in pigeons %}
-  <div class="card">
+
+<div class="card">
+  <a href="{% url 'detail' pigeon.id %}">
     <div class="card-content">
       <span class="card-title">{{ pigeon.name }}</span>
       <p>Description: {{ pigeon.description }}</p>
@@ -14,7 +16,9 @@
         <p>Age: Egg</p>
       {% endif %}
     </div>
-  </div>
+  </a>
+</div>
+
 {% endfor %}
 
 {% endblock %}
